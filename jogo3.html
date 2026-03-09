@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<title>Slot Machine</title>
+</head>
+
+<body style="text-align:center;font-family:Arial;background:black;color:white;">
+
+<h1>🎰 Slot Machine</h1>
+
+<p id="slots" style="font-size:40px;">🍒 🍋 🍉</p>
+
+<button onclick="girar()">Girar</button>
+
+<p id="resultado"></p>
+
+<script>
+
+let simbolos = ["🍒","🍋","🍉","⭐","💎"];
+
+function girar(){
+
+let s1 = simbolos[Math.floor(Math.random()*simbolos.length)];
+let s2 = simbolos[Math.floor(Math.random()*simbolos.length)];
+let s3 = simbolos[Math.floor(Math.random()*simbolos.length)];
+
+document.getElementById("slots").innerHTML = s1 + " " + s2 + " " + s3;
+
+if(s1 == s2 && s2 == s3){
+document.getElementById("resultado").innerHTML = "🎉 JACKPOT!";
+}else{
+document.getElementById("resultado").innerHTML = "Tente novamente!";
+}
+
+}
+
+</script>
+
+</body>
+
+</html>
